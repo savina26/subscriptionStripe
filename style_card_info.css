@@ -1,0 +1,63 @@
+body{
+    align-items: center;
+     align-content: center;    
+     max-height: max-content;
+     max-width: max-content;
+     margin:auto;
+     background-color: #1e4c90;
+     font-family:"Aptos SemiBold", "Abadi","Cordia New","Meiryo UI";
+}
+.container{
+    border-radius: 5px;
+    margin-top: 180px;
+    display: flex;
+}
+.container1{
+background-color: white;
+padding:25px;
+width:370px;
+}
+.container2{
+    background-color: #f5f5f6;
+    padding:10px 30px;
+    padding-bottom: 40px;
+}
+.enter_details{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: smaller;
+}
+#card_box{
+    color:grey;
+    width: 350px;
+    height:25px;
+}
+#confirm{
+    font-size: 10px;
+    border:0px;
+    border-radius: 3px;
+    padding:10px;
+    color: white;
+    background-color:#1e4c90 ;
+    margin-top: 25px;
+}
+.left{
+    border-bottom: rgb(210, 205, 205) solid;
+    align-items: left;
+    text-align:left;
+    padding:5px;
+    margin:10px;
+    width:150px;
+}
+.right{
+    border-bottom: rgb(210, 205, 205) solid;
+    align-items: right;
+    text-align: right;
+    padding:5px;
+    margin:10px;
+    width:150px;
+}
+.heading{
+    margin-bottom: 0px;
+    font-size: 30px;
+}

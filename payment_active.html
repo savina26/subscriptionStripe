@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_payment.css">
+    <title>Payment</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+            <div class="heading"> 
+                <span class="current">Current Plan Details</span>
+                <div class="active"><b>Active</b></div>
+                <a class="cancel" href="payment_cancelled.html" onclick="">Cancel</a>
+            </div>
+            <p class="basic">Basic</p>
+            <p class="phone">Phone+Tablet</p>
+            <p class="rupees">&#x20B9 2,000<span class="plan-billing-cycle">/yr</span></p>
+            <button class="change">Change Plan</button>
+            <p class="last">Your subscription has started on Jul 11th, 2022 and will auto renew on Jul 12th, 2023</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Get plan details from URL parameters
+            const planName = urlParams.get("planName");
+            const billingCycle = urlParams.get("billingCycle");
+            const planPrice = urlParams.get("planPrice");
+            
+            // Update page content with plan details
+            document.querySelector(".basic").textContent = planName;
+            document.querySelector(".phone").textContent = "Phone+Tablet+Computer+TV"; // You can update this based on your requirement
+            document.querySelector(".rupees").innerHTML = ` ${planPrice}<span class="plan-billing-cycle">${billingCycle === "Monthly" ? "/mo" : "/yr"}</span>`;
+        });
+
+
+        
+
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Get plan details from URL parameters
+            const planName = urlParams.get("planName");
+            const billingCycle = urlParams.get("billingCycle");
+            const planPrice = urlParams.get("planPrice");
+
+            // Update page content with plan details
+            document.querySelector(".right.plan-name").textContent = planName;
+            document.querySelector(".right.billing-cycle").textContent = billingCycle;
+            document.querySelector(".right.plan-price").textContent = ` ${planPrice}`;
+        
+
+        function redirectToPaymentActive() {
+            // Redirect to payment_active.html
+            window.location.href = `payment_active.html?planName=${encodeURIComponent(document.querySelector(".right.plan-name").textContent)}&billingCycle=${encodeURIComponent(document.querySelector(".right.billing-cycle").textContent)}&planPrice=${encodeURIComponent(document.querySelector(".right.plan-price").textContent)}`;
+        }
+        
+   
+    </script>
+</body>
+</html>

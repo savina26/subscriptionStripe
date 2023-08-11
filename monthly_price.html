@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_monthly_price.css">
+    <title>Monthly Price</title>
+</head>
+<body>
+    <h2 class="heading_choose">Choose the right plan for you</h2>
+    <table>
+        <th id="heading_table">
+            <tr>
+                <td>
+                    <div id="timespan_selection">
+                        <a class="spans_time" href="monthly_price.html"><span class="spans_link" >Monthly</span></a>
+                        <a href="yearly_price.html"><span class="spans_time">Yearly</span></a>
+                    </div>
+                </td>
+                <td class="heading_boxes Mobile">
+                    <div>Mobile</div>
+                </td>
+                <td class="heading_boxes Basic">
+                    <div>Basic</div>
+                </td>
+                <td class="heading_boxes Standard">
+                    <div>Standard</div>
+                </td>
+                <td class="heading_boxes Premium">
+                    <div>Premium</div>
+                </td>
+            </tr>
+        </th>
+        <tr id="Montly_prices">
+            <td id="monthlyPrice" class="border_bottom row_head">
+                Monthly price
+            </td>
+            <td class="border_bottom Mobile">
+                <p>&#x20B9 100</p>
+            </td>
+            <td class="border_bottom Basic">
+                <p>&#x20B9 200</p>
+            </td>
+
+            <td class="border_bottom Standard">
+                <p>&#x20B9 500</p>
+            </td>
+
+            <td class="border_bottom Premium">
+                <p>&#x20B9 700</p>
+            </td>
+        </tr>
+            <td id="videoQuality" class="border_bottom row_head">
+                Video quality
+            </td>
+            <td class="border_bottom Mobile">
+                <p>Good</p>
+            </td>
+            <td class="border_bottom Basic">
+                <p>Good</p>
+            </td>
+            <td class="border_bottom Standard">
+                <p>Better</p>
+            </td>
+            <td class="border_bottom Premium">
+                <p>Best</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="border_bottom row_head">
+                Resolution
+            </td>
+            <td class="border_bottom Mobile">
+                <p>480p</p>
+            </td>
+            <td class="border_bottom Basic">
+                <p>480p</p>
+            </td>
+            <td class="border_bottom Standard">
+                <p>1080p</p>
+            </td>
+            <td class="border_bottom Premium">
+                <p>4K+HDR</p>
+            </td>
+        </tr>
+        <div >
+            <tr>
+                <td class="row_head">
+                    Devices you can use to watch
+                </td>
+                <td class="Mobile">
+                    <p>Phone</p>
+                </td>
+                <td class="Basic">
+                    <p>Phone</p>
+                </td>
+                <td class="Standard">
+                    <p>Phone</p>
+                </td>
+                <td class="Premium">
+                    <p>Phone</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="Mobile">
+                    <p>Tablet</p>
+                </td>
+                <td class="Basic">
+                    <p>Tablet</p>
+                </td>
+                <td class="Standard">
+                    <p>Tablet</p>
+                </td>
+                <td class="Premium">
+                    <p>Tablet</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                </td>
+                <td class="Basic">
+                    <p>Computer</p>
+                </td>
+                <td class="Standard">
+                    <p>Computer</p>
+                </td>
+                <td class="Premium">
+                    <p>Computer</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                </td>
+                <td class="Basic">
+                    <p>TV</p>
+                </td>
+                <td class="Standard">
+                    <p>TV</p>
+                </td>
+                <td class="Premium">
+                    <p>TV</p>
+                </td>
+            </tr>
+        </div>
+    </table>
+    <button class="btn" id="nextButton" onclick="redirectToCardInfo()">
+        Next
+    </button>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const columnHeaders = document.querySelectorAll(".heading_boxes");
+            columnHeaders.forEach(header => {
+                header.addEventListener("click", function() {
+                    columnHeaders.forEach(item => {
+                        item.classList.remove("active");
+                    });
+                    header.classList.add("active");
+                });
+            });
+        });
+
+        function redirectToCardInfo() {
+            // Get selected plan details
+            
+            const selectedPlan = document.querySelector(".heading_boxes.active div").textContent;
+            const billingCycle = "Monthly"; // Assuming it's always Monthly for now
+            let planPrice;
+
+            // Determine plan price based on the selected plan
+            if (selectedPlan === "Mobile") {
+                planPrice = "₹ 100";
+            } else if (selectedPlan === "Basic") {
+                planPrice = "₹ 200";
+            } else if (selectedPlan === "Standard") {
+                planPrice = "₹ 500";
+            } else if (selectedPlan === "Premium") {
+                planPrice = "₹ 700";
+            } else {
+                planPrice = "₹ 200"; // Default to Basic plan price
+            }
+
+            const url = `card_info.html?planName=${encodeURIComponent(selectedPlan)}&billingCycle=${encodeURIComponent(billingCycle)}&planPrice=${encodeURIComponent(planPrice)}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>

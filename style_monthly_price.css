@@ -1,0 +1,119 @@
+body {
+    max-width:max-content;
+    margin: auto;
+    padding-top: 30px;
+    font-family:"Aptos SemiBold", "Abadi","Cordia New","Meiryo UI";
+}
+
+h2{
+    display: inline-block;
+    width: 100%;
+    text-align:center;
+}
+
+#timespan_selection{
+   background-color: #1e4c90;
+   border-radius: 20px;
+   max-width: fit-content;
+   padding: 10px 10px;
+   height:14px;
+   font-size: 10px;
+   margin:auto;
+   color:white;
+   border-bottom: 0px;
+}
+
+.spans_time{
+    color:white;
+    text-decoration: none;
+    padding:3px;
+    border-radius: 10px;
+    
+}
+
+.spans_link{
+    padding: 4px;
+    text-transform: none;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #1e4c90;
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+table{
+    font-size: small;
+    color:grey;
+}
+
+
+td{
+    font-size:10px;
+    font-weight: 200;
+    text-align :center;
+}
+
+.heading_boxes{
+    font-weight: 550;
+    justify-content: center;
+    border:white solid 10px;
+    color: white;
+    text-align:center;
+    align-items: center;
+    align-content: center;
+    width: 50px;
+    font-size: 11px;
+    border-radius: 12px;
+    padding:30px 20px;
+    background-color: #7894bd;
+}
+
+.heading_boxes:hover{
+    background-color: #1e4c90;
+}
+
+.btn{
+    width:300px;
+    background-color: #1e4c90;
+    color: white;
+    border-radius: 5px;
+    height:40px;
+    border: 0px;
+    margin-left:200px;
+    align-items:center; 
+    align-content: center;
+}
+
+.border_bottom{ 
+    padding:0px;
+    margin:0px;
+    font-size:small;
+    /* text-align: center; */
+    /* align-content: center; */
+    /* align-items: center; */
+    border-left: 0cm;
+    border-right: 0cm;
+    border-bottom: rgb(237, 231, 231) solid 2px;
+}
+
+.row_head{
+    color:black;
+    font-size: small;
+    text-align:left;
+} 
+
+table{
+    margin-bottom:10px;
+}
+
+.basic:hover{
+    color: #1e4c90;
+}
+
+.active {
+    background-color: #1e4c90;
+    color: white;
+}

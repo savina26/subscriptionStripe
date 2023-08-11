@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_card_info.css">
+    <title>Card Information</title>
+</head>
+<body>
+    <div class="container">
+        <span class="container1">
+            <h2 class="heading">Complete Payment</h2>
+            <p class="enter_details">Enter your credit or debit card details below</p>
+            <input id="card_box" type="text" placeholder="&#x1F4B3 Card Number &#09&#09&#09&#09  MM/YY  CVC">
+            <div>
+            <button id="confirm" onclick="redirectToPaymentActive()">Confirm Payment</button>
+        </div>
+        </span>
+        <span class="container2">
+                <h3>Order Summary</h3>
+                <table>
+                   <!-- ... -->
+<tr>
+    <td class="left">Plan Name</td>
+    <td class="right plan-name">Basic</td>
+</tr>
+<tr>
+    <td class="left">Billing Cycle</td>
+    <td class="right billing-cycle">Monthly</td>
+</tr>
+<tr>
+    <td class="left">Plan price</td>
+    <td class="right plan-price">&#x20B9 200/mo</td>
+</tr>
+<!-- ... -->                   
+                </table>
+        </span>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const columnHeaders = document.querySelectorAll(".heading_boxes");
+            columnHeaders.forEach(header => {
+                header.addEventListener("click", function() {
+                    columnHeaders.forEach(item => {
+                        item.classList.remove("active");
+                    });
+                    header.classList.add("active");
+                });
+            });
+
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Get plan details from URL parameters
+            const planName = urlParams.get("planName");
+            const billingCycle = urlParams.get("billingCycle");
+            const planPrice = urlParams.get("planPrice");
+
+            // Update page content with plan details
+            document.querySelector(".right.plan-name").textContent = planName;
+            document.querySelector(".right.billing-cycle").textContent = billingCycle;
+            document.querySelector(".right.plan-price").textContent = ` ${planPrice}`;
+        });
+
+        function redirectToPaymentActive() {
+            // Redirect to payment_active.html
+            window.location.href = `payment_active.html?planName=${encodeURIComponent(document.querySelector(".right.plan-name").textContent)}&billingCycle=${encodeURIComponent(document.querySelector(".right.billing-cycle").textContent)}&planPrice=${encodeURIComponent(document.querySelector(".right.plan-price").textContent)}`;
+        }
+        
+    </script>
+</body>
+</html>

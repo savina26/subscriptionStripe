@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e4c90;
+    font-family:"Aptos SemiBold", "Abadi","Cordia New","Meiryo UI";
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+.signup-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#create {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+    text-decoration: solid;
+}
+.input{
+    width: 300px;
+}
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+form button {
+    width: 325px;
+    padding: 15px;
+    background-color:#1e4c90;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+form button:hover {
+    background-color: #0056b3;
+}
+form label {
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.login-link {
+    margin-top: 20px;
+    text-align: center;   
+}
+.login-link a {
+    color: #1e4c90;
+    text-decoration: none;
+}
+.login-link a:hover {
+    text-decoration: underline;
+}
+.remember-box {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.remember-box input {
+    margin-right: -5px;
+    padding: -10px;
+    margin-top: -30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: -42%;
+}
+.remember-box label{
+    margin-left: -160px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
