@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -154,7 +153,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const columnHeaders = document.querySelectorAll(".heading_boxes");
             columnHeaders.forEach(header => {
-                header.addEventListener("click", function() {
+                header.addEventListener("click", function(){
                     columnHeaders.forEach(item => {
                         item.classList.remove("active");
                     });
@@ -164,13 +163,11 @@
         });
 
         function redirectToCardInfo() {
-            // Get selected plan details
             
             const selectedPlan = document.querySelector(".heading_boxes.active div").textContent;
-            const billingCycle = "Monthly"; // Assuming it's always Monthly for now
+            const billingCycle = "Monthly"; 
             let planPrice;
 
-            // Determine plan price based on the selected plan
             if (selectedPlan === "Mobile") {
                 planPrice = "₹ 100";
             } else if (selectedPlan === "Basic") {
@@ -180,7 +177,7 @@
             } else if (selectedPlan === "Premium") {
                 planPrice = "₹ 700";
             } else {
-                planPrice = "₹ 200"; // Default to Basic plan price
+                planPrice = "₹ 200"; 
             }
 
             const url = `card_info.html?planName=${encodeURIComponent(selectedPlan)}&billingCycle=${encodeURIComponent(billingCycle)}&planPrice=${encodeURIComponent(planPrice)}`;

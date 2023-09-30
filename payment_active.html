@@ -24,43 +24,29 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Get URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            // Get plan details from URL parameters
+           
+            const urlParams = new URLSearchParams(window.location.search);           
             const planName = urlParams.get("planName");
             const billingCycle = urlParams.get("billingCycle");
             const planPrice = urlParams.get("planPrice");
             
-            // Update page content with plan details
             document.querySelector(".basic").textContent = planName;
-            document.querySelector(".phone").textContent = "Phone+Tablet+Computer+TV"; // You can update this based on your requirement
+            document.querySelector(".phone").textContent = "Phone+Tablet+Computer+TV"; 
             document.querySelector(".rupees").innerHTML = ` ${planPrice}<span class="plan-billing-cycle">${billingCycle === "Monthly" ? "/mo" : "/yr"}</span>`;
         });
 
-
-        
-
-            // Get URL parameters
             const urlParams = new URLSearchParams(window.location.search);
-
-            // Get plan details from URL parameters
             const planName = urlParams.get("planName");
             const billingCycle = urlParams.get("billingCycle");
             const planPrice = urlParams.get("planPrice");
 
-            // Update page content with plan details
             document.querySelector(".right.plan-name").textContent = planName;
             document.querySelector(".right.billing-cycle").textContent = billingCycle;
             document.querySelector(".right.plan-price").textContent = ` ${planPrice}`;
-        
-
+    
         function redirectToPaymentActive() {
-            // Redirect to payment_active.html
             window.location.href = `payment_active.html?planName=${encodeURIComponent(document.querySelector(".right.plan-name").textContent)}&billingCycle=${encodeURIComponent(document.querySelector(".right.billing-cycle").textContent)}&planPrice=${encodeURIComponent(document.querySelector(".right.plan-price").textContent)}`;
-        }
-        
-   
+        }  
     </script>
 </body>
 </html>

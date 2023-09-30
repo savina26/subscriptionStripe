@@ -11,7 +11,7 @@
     <div class="container">
         <div class="signup-box">
             <p id="create">Create Account</p>
-            <form action="signup.php" method="post">             
+            <form action="signup.php" method="post" id="signupForm">             
                 <label for="name">Name</label>
                 <input type="text" name="name" class="input" placeholder="Enter your name">
                 <label for="email">Email</label>
@@ -27,5 +27,15 @@
             <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
         </div>
     </div>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            setTimeout(function() {
+                window.location.href = "login.html";
+            }, 2000);
+        });
+    </script>
+
 </body>
 </html>

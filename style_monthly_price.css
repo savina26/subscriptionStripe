@@ -49,7 +49,6 @@ table{
     color:grey;
 }
 
-
 td{
     font-size:10px;
     font-weight: 200;
@@ -91,9 +90,6 @@ td{
     padding:0px;
     margin:0px;
     font-size:small;
-    /* text-align: center; */
-    /* align-content: center; */
-    /* align-items: center; */
     border-left: 0cm;
     border-right: 0cm;
     border-bottom: rgb(237, 231, 231) solid 2px;

@@ -61,3 +61,11 @@ width:370px;
     margin-bottom: 0px;
     font-size: 30px;
 }
+
+.atm-input {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+}
